@@ -23,7 +23,7 @@ $(function () {
     $('.link-scroll').on('click', function (e) {
         var anchor = $(this);
         $('html, body').stop().animate({
-            scrollTop: $(anchor.attr('href')).offset().top
+            scrollTop: $(anchor.attr('href')).offset().top-50
         }, 1000);
         e.preventDefault();
     });
@@ -35,7 +35,7 @@ $(function () {
 
     $('body').scrollspy({
         target: '#navbarcollapse',
-        offset: 80
+        offset: 20
     });
 
 

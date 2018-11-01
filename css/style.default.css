@@ -557,9 +557,9 @@ nav.navbar a.nav-link.active, nav.navbar a.nav-link:hover {
 * =====================
 *
 */
-.customers-section img {
-  padding: 10px;
-  max-width: 80px;
+.customers-section  {
+  width: 80%;
+  float: right;
 }
 
 /*
@@ -592,7 +592,7 @@ nav.navbar a.nav-link.active, nav.navbar a.nav-link:hover {
 *
 */
 footer.main-footer {
-  padding: 60px 0;
+  padding: 10px 0;
   background: #222;
 }
 
@@ -615,8 +615,8 @@ footer.main-footer p.social a.facebook {
   background-color: #4460ae;
 }
 
-footer.main-footer p.social a.gplus {
-  background-color: #c21f25;
+footer.main-footer p.social a.linkedin {
+  background-color: #007bff;;
 }
 
 footer.main-footer p.social a.instagram {
