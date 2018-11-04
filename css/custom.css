@@ -92,6 +92,46 @@
     -webkit-animation: slide-around 5s linear infinite both;
     animation: slide-around 5s linear infinite both;
 }
+.move-to-corners-Maya{
+    -webkit-animation: move-to-corners-Maya 5s linear  both;
+    animation: move-to-corners-Maya 1s linear  both;
+}
+.move-to-corners-Unity{
+    -webkit-animation: move-to-corners-Unity 5s linear  both;
+    animation: move-to-corners-Unity 1s linear  both;
+}
+.move-to-corners-cSharp{
+    -webkit-animation: move-to-corners-cSharp 5s linear  both;
+    animation: move-to-corners-cSharp 1s linear  both;
+}
+.move-to-corners-Angular{
+    -webkit-animation: move-to-corners-Angular 5s linear  both;
+    animation: move-to-corners-Angular 1s linear  both;
+}
+.move-to-corners-Cpp{
+    -webkit-animation: move-to-corners-Cpp 5s linear  both;
+    animation: move-to-corners-Cpp 1s linear  both;
+}
+.move-to-corners-Git{
+    -webkit-animation: move-to-corners-Git 5s linear  both;
+    animation: move-to-corners-Git 1s linear  both;
+}
+.move-to-corners-Android{
+    -webkit-animation: move-to-corners-Android 5s linear  both;
+    animation: move-to-corners-Android 1s linear  both;
+}
+.move-to-corners-Trinity{
+    -webkit-animation: move-to-corners-Trinity 5s linear  both;
+    animation: move-to-corners-Trinity 1s linear  both;
+}
+.move-to-corners-Sql{
+    -webkit-animation: move-to-corners-Sql 5s linear  both;
+    animation: move-to-corners-Sql 1s linear  both;
+}
+.move-to-corners-Dotnet{
+    -webkit-animation: move-to-corners-Dotnet 5s linear  both;
+    animation: move-to-corners-Dotnet 1s linear  both;
+}
 
 
 .logos{
@@ -153,6 +193,67 @@
    100% {
         -webkit-transform: translateX(0px);
         transform: translateX(0px);
+    }
+}
+
+@keyframes move-to-corners-Maya {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-1000px);
+        transform: var(--logosFloatingBoxXN) var(--logosFloatingBoxXN) var(--logosFloatingBoxXN);
+    }
+}
+@keyframes move-to-corners-Unity {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-1000px);
+        transform: var(--logosFloatingBoxX) var(--logosFloatingBoxX) var(--logosFloatingBoxX);
+    }
+}
+@keyframes move-to-corners-cSharp {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-1000px);
+        transform: var(--logosFloatingBoxXN) var(--logosFloatingBoxYN) var(--logosFloatingBoxXN) var(--logosFloatingBoxYN) var(--logosFloatingBoxXN) var(--logosFloatingBoxYN);
+    }
+}
+@keyframes move-to-corners-Angular {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-1000px);
+        transform: var(--logosFloatingBoxX) var(--logosFloatingBoxYN) var(--logosFloatingBoxX) var(--logosFloatingBoxYN) var(--logosFloatingBoxX) var(--logosFloatingBoxYN);
+    }
+}
+@keyframes move-to-corners-Dotnet {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-1000px);
+        transform: var(--logosFloatingBoxX) var(--logosFloatingBoxYN) var(--logosFloatingBoxX) var(--logosFloatingBoxYN)  var(--logosFloatingBoxYN);
+    }
+}
+@keyframes move-to-corners-Android {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-1000px);
+        transform: var(--logosFloatingBoxXN);
     }
 }
 

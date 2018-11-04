@@ -29,10 +29,10 @@ $(function (){
     document.documentElement.style.setProperty('--logosDiffX',"translate3d("+ logosDiffX.left + "px,"+logosDiffX.top + "px,0px)");
     document.documentElement.style.setProperty('--logosDiffY',"translate3d("+ logosDiffY.left + "px,"+logosDiffY.top + "px,0px)");
     document.documentElement.style.setProperty('--logosRotateAround',"50% " + -introHeight +"px" );
-    document.documentElement.style.setProperty('--logosFloatingBoxX',"translateX("+introWidth*3/2 +"px)");
-    document.documentElement.style.setProperty('--logosFloatingBoxY',"translateY("+introHeight*3/2 +"px)");
-    document.documentElement.style.setProperty('--logosFloatingBoxXN',"translateX("+ -introWidth*3/2 +"px)");
-    document.documentElement.style.setProperty('--logosFloatingBoxYN',"translateY("+ -introHeight*3/1.5 +"px)");
+    document.documentElement.style.setProperty('--logosFloatingBoxX',"translateX("+introWidth*3/6 +"px)");
+    document.documentElement.style.setProperty('--logosFloatingBoxY',"translateY("+introHeight*3/6 +"px)");
+    document.documentElement.style.setProperty('--logosFloatingBoxXN',"translateX("+ -introWidth*3/6 +"px)");
+    document.documentElement.style.setProperty('--logosFloatingBoxYN',"translateY("+ -introHeight*3/4 +"px)");
     
     bindLogos();
 
@@ -42,7 +42,7 @@ $(function (){
      setInterval(function () {
          if ($('.logoSelector').length === 0 && $('.logoInHead').length !== 0 ){
              setTimeout(function () {
-                     $('#head').addClass("shake-lr");
+                    // $('#head').addClass("shake-lr");
                      var logos = $('.logoInHead');
                      logos.each(function () {
 
@@ -55,13 +55,88 @@ $(function (){
                      var delay = 500;
                      logos.each(function () {
                          var logo = this;
-
+                         switch (logo.id) {
+                             case "maya":
                                  logo.querySelector('img').classList.remove("shake-lr-logos");
                                  setTimeout(function () {
-                                     logo.querySelector('img').classList.add("slide-around");
-                                 },delay);
+                                         logo.querySelector('img').classList.add("move-to-corners-Maya");
+                                     },
+                                     delay);
                                  logo.classList.remove("logoInHead");
-
+                                 break;
+                             case "unity":
+                                 logo.querySelector('img').classList.remove("shake-lr-logos");
+                                 setTimeout(function () {
+                                         logo.querySelector('img').classList.add("move-to-corners-Unity");
+                                     },
+                                     delay);
+                                 logo.classList.remove("logoInHead");
+                                 break;
+                             case "cSharp":
+                                 logo.querySelector('img').classList.remove("shake-lr-logos");
+                                 setTimeout(function () {
+                                         logo.querySelector('img').classList.add("move-to-corners-cSharp");
+                                     },
+                                     delay);
+                                 logo.classList.remove("logoInHead");
+                                 break;
+                             case "angular":
+                                 logo.querySelector('img').classList.remove("shake-lr-logos");
+                                 setTimeout(function () {
+                                         logo.querySelector('img').classList.add("move-to-corners-Angular");
+                                     },
+                                     delay);
+                                 logo.classList.remove("logoInHead");
+                                 break;
+                             case "cpp":
+                                 logo.querySelector('img').classList.remove("shake-lr-logos");
+                                 setTimeout(function () {
+                                         logo.querySelector('img').classList.add("move-to-corners-Cpp");
+                                     },
+                                     delay);
+                                 logo.classList.remove("logoInHead");
+                                 break;
+                             case "git":
+                                 logo.querySelector('img').classList.remove("shake-lr-logos");
+                                 setTimeout(function () {
+                                         logo.querySelector('img').classList.add("move-to-corners-Git");
+                                     },
+                                     delay);
+                                 logo.classList.remove("logoInHead");
+                                 break;
+                             case "android":
+                                 logo.querySelector('img').classList.remove("shake-lr-logos");
+                                 setTimeout(function () {
+                                         logo.querySelector('img').classList.add("move-to-corners-Android");
+                                     },
+                                     delay);
+                                 logo.classList.remove("logoInHead");
+                                 break;
+                             case "trinity":
+                                 logo.querySelector('img').classList.remove("shake-lr-logos");
+                                 setTimeout(function () {
+                                         logo.querySelector('img').classList.add("move-to-corners-Trinity");
+                                     },
+                                     delay);
+                                 logo.classList.remove("logoInHead");
+                                 break;
+                             case "sql":
+                                 logo.querySelector('img').classList.remove("shake-lr-logos");
+                                 setTimeout(function () {
+                                         logo.querySelector('img').classList.add("move-to-corners-Sql");
+                                     },
+                                     delay);
+                                 logo.classList.remove("logoInHead");
+                                 break;
+                             case "dotnet":
+                                 logo.querySelector('img').classList.remove("shake-lr-logos");
+                                 setTimeout(function () {
+                                         logo.querySelector('img').classList.add("move-to-corners-Dotnet");
+                                     },
+                                     delay);
+                                 logo.classList.remove("logoInHead");
+                                 break;
+                         }
                          delay +=500;
 
                      });
