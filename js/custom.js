@@ -14,8 +14,15 @@ function randomJellyEffect() {
     
 }
 
-$(function (){
-
+function recalculate()
+{
+    if(jQuery(window).width() > 1200)
+    {
+        setUp();
+    }
+}
+function setUp()
+{
     var introHeight = $('#intro').height();
     var introWidth = $('#intro').width();
     var headPos  = $('#head').offset();
@@ -24,7 +31,7 @@ $(function (){
     var logosDiffX = {top:0 , left: mayaPos.left  - cSharpPos.left };
     var logosDiffY = {top:mayaPos.top - cSharpPos.top   , left: 0 };
     var movePos = {top:headPos.top -mayaPos.top +50 , left:headPos.left - mayaPos.left +150};
-    
+
     document.documentElement.style.setProperty('--headsPosition',"translate3d("+ movePos.left + "px,"+movePos.top + "px,0px)");
     document.documentElement.style.setProperty('--logosDiffX',"translate3d("+ logosDiffX.left + "px,"+logosDiffX.top + "px,0px)");
     document.documentElement.style.setProperty('--logosDiffY',"translate3d("+ logosDiffY.left + "px,"+logosDiffY.top + "px,0px)");
@@ -36,118 +43,24 @@ $(function (){
     
     bindLogos();
 
-     setUpFollowSpinAimation();
-     setInterval(randomJellyEffect,5000);
+    setUpFollowSpinAimation();
+    setInterval(randomJellyEffect,5000);
     
-     setInterval(function () {
-         if ($('.logoSelector').length === 0 && $('.logoInHead').length !== 0 ){
-             setTimeout(function () {
-                    // $('#head').addClass("shake-lr");
-                     var logos = $('.logoInHead');
-                     logos.each(function () {
-
-                         this.querySelector('img').classList.add("shake-lr-logos");
-
-                     });
-                 setTimeout(function () {
-                     $('#headTop').addClass("bounce-out-top");
-                     var logos = $('.logoInHead');
-                     var delay = 500;
-                     logos.each(function () {
-                         var logo = this;
-                         switch (logo.id) {
-                             case "maya":
-                                 logo.querySelector('img').classList.remove("shake-lr-logos");
-                                 setTimeout(function () {
-                                         logo.querySelector('img').classList.add("move-to-corners-Maya");
-                                     },
-                                     delay);
-                                 logo.classList.remove("logoInHead");
-                                 break;
-                             case "unity":
-                                 logo.querySelector('img').classList.remove("shake-lr-logos");
-                                 setTimeout(function () {
-                                         logo.querySelector('img').classList.add("move-to-corners-Unity");
-                                     },
-                                     delay);
-                                 logo.classList.remove("logoInHead");
-                                 break;
-                             case "cSharp":
-                                 logo.querySelector('img').classList.remove("shake-lr-logos");
-                                 setTimeout(function () {
-                                         logo.querySelector('img').classList.add("move-to-corners-cSharp");
-                                     },
-                                     delay);
-                                 logo.classList.remove("logoInHead");
-                                 break;
-                             case "angular":
-                                 logo.querySelector('img').classList.remove("shake-lr-logos");
-                                 setTimeout(function () {
-                                         logo.querySelector('img').classList.add("move-to-corners-Angular");
-                                     },
-                                     delay);
-                                 logo.classList.remove("logoInHead");
-                                 break;
-                             case "cpp":
-                                 logo.querySelector('img').classList.remove("shake-lr-logos");
-                                 setTimeout(function () {
-                                         logo.querySelector('img').classList.add("move-to-corners-Cpp");
-                                     },
-                                     delay);
-                                 logo.classList.remove("logoInHead");
-                                 break;
-                             case "git":
-                                 logo.querySelector('img').classList.remove("shake-lr-logos");
-                                 setTimeout(function () {
-                                         logo.querySelector('img').classList.add("move-to-corners-Git");
-                                     },
-                                     delay);
-                                 logo.classList.remove("logoInHead");
-                                 break;
-                             case "android":
-                                 logo.querySelector('img').classList.remove("shake-lr-logos");
-                                 setTimeout(function () {
-                                         logo.querySelector('img').classList.add("move-to-corners-Android");
-                                     },
-                                     delay);
-                                 logo.classList.remove("logoInHead");
-                                 break;
-                             case "trinity":
-                                 logo.querySelector('img').classList.remove("shake-lr-logos");
-                                 setTimeout(function () {
-                                         logo.querySelector('img').classList.add("move-to-corners-Trinity");
-                                     },
-                                     delay);
-                                 logo.classList.remove("logoInHead");
-                                 break;
-                             case "sql":
-                                 logo.querySelector('img').classList.remove("shake-lr-logos");
-                                 setTimeout(function () {
-                                         logo.querySelector('img').classList.add("move-to-corners-Sql");
-                                     },
-                                     delay);
-                                 logo.classList.remove("logoInHead");
-                                 break;
-                             case "dotnet":
-                                 logo.querySelector('img').classList.remove("shake-lr-logos");
-                                 setTimeout(function () {
-                                         logo.querySelector('img').classList.add("move-to-corners-Dotnet");
-                                     },
-                                     delay);
-                                 logo.classList.remove("logoInHead");
-                                 break;
-                         }
-                         delay +=500;
-
-                     });
-                 },3000)
-             }, 3000)
-         }
-             
-         
-     },1);
-    
-});
+    setInterval(function () {
+        if ($('.logoSelector').length === 0 && $('.logoInHead').length !== 0) {
+            setTimeout(function () {
+                $('.logoInHead').each(function () {
+                    this.querySelector('img').classList.add("move-to-side");
+                });
+                $('#head').addClass("move-to-side-head");
+                setTimeout(function() 
+                {$('#personalAbout').css("display","");}
+                ,900);
+            }, 1000);
+        };
+    }, 1);
+}
+$( setUp() );
 
 function enableSpiningAnimation() {
     spiningAnimation = !spiningAnimation;
